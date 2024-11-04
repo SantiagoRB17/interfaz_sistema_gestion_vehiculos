@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" text="Gestionar Alquileres" textAlignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="74.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Agregar alquiler" />
+      <TableView fx:id="Tb_listaAlquileres" layoutX="50.0" layoutY="157.0" prefHeight="200.0" prefWidth="503.0">
+        <columns>
+          <TableColumn prefWidth="50.0" text="Dias" />
+          <TableColumn prefWidth="64.0" text="Codigo" />
+            <TableColumn prefWidth="75.0" text="Vehiculo" />
+            <TableColumn prefWidth="70.0" text="Cliente" />
+        </columns>
+      </TableView>
+      <Separator layoutX="9.0" layoutY="133.0" prefHeight="3.0" prefWidth="572.0" />
+      <Button layoutX="228.0" layoutY="74.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Editar alquiler" />
+      <Button layoutX="436.0" layoutY="74.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Eliminar alquiler" />
+   </children>
+</AnchorPane>

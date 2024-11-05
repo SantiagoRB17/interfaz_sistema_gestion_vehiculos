@@ -130,10 +130,10 @@ public class Empresa {
      * @param NumeroMatrícula matricula del vehiculo
      * @return falso en caso de que no existe, verdadero en caso de que exista
      */
-    public boolean verificarVehiculo(int NumeroMatrícula){
+    public boolean verificarVehiculo(String NumeroMatrícula){
         boolean centinela=false;
         for (Vehiculo vehiculo : vehiculos){
-            if (vehiculo.getNumeroMatrícula()==(NumeroMatrícula)){
+            if (vehiculo.getNumeroMatrícula().equals(NumeroMatrícula)){
                 centinela=true;
             }
         }
@@ -157,10 +157,10 @@ public class Empresa {
      * Metodo para eliminar un vehiculo de la lista de vehiculos
      * @param numeroMatrícula matricula del vehiculo a eliminar
      */
-    public boolean eliminarVehiculo(int numeroMatrícula){
+    public boolean eliminarVehiculo(String numeroMatrícula){
         boolean centinela=false;
         for (Vehiculo vehiculo : vehiculos){
-            if(vehiculo.getNumeroMatrícula()==numeroMatrícula){
+            if(vehiculo.getNumeroMatrícula().equals(numeroMatrícula)){
                 vehiculos.remove(vehiculo);
                 centinela=true;
                 break;
@@ -169,10 +169,10 @@ public class Empresa {
         return centinela;
     }
 
-    public boolean actualizarVehiculo(int numeroMatrícula, Vehiculo actualizado) {
+    public boolean actualizarVehiculo(String numeroMatrícula, Vehiculo actualizado) {
         boolean centinela = false;
         for (Vehiculo vehiculo : vehiculos) {
-            if (vehiculo.getNumeroMatrícula()==(numeroMatrícula)) {
+            if (vehiculo.getNumeroMatrícula().equals(numeroMatrícula)) {
                 vehiculo.setMarca(actualizado.getMarca());
                 vehiculo.setModelo(actualizado.getModelo());
                 vehiculo.setAñoFabricación(actualizado.getAñoFabricación());

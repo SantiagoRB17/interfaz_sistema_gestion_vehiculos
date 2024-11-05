@@ -3,9 +3,8 @@ package co.edu.uniquindio.poo.model;
 public class Moto extends Vehiculo {
     boolean EsAutomatica;
     
-    public Moto(int numeroMatrícula, String marca, int modelo, int añoFabricación, double tarifaBase,
-            boolean esAutomatica) {
-        super(numeroMatrícula, marca, modelo, añoFabricación, tarifaBase);
+    public Moto(String numeroMatrícula, String marca, int modelo, int añoFabricación, boolean esAutomatica) {
+        super(numeroMatrícula, marca, modelo, añoFabricación);
         EsAutomatica = esAutomatica;
     }
 

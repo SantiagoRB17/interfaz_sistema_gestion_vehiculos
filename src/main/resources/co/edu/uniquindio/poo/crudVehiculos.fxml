@@ -5,37 +5,94 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="610.0" prefWidth="600.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="561.0">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="290.0" text="Gestionar Vehiculos" textAlignment="CENTER">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="14.0" layoutY="244.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Agregar Vehiculo" />
-                  <Button layoutX="227.0" layoutY="244.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Editar Vehiculo" />
-                  <Button layoutX="439.0" layoutY="244.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Eliminar Vehiculo" />
-                  <Label layoutX="14.0" layoutY="64.0" prefHeight="21.0" prefWidth="442.0" text="Label" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <TableView fx:id="Tb_listaAlquileres" layoutX="48.0" layoutY="50.0" prefHeight="200.0" prefWidth="503.0">
-                    <columns>
-                      <TableColumn prefWidth="72.0" text="Nombre" />
-                      <TableColumn prefWidth="64.0" text="Cedula" />
-                        <TableColumn prefWidth="79.0" text="Telefono" />
-                        <TableColumn prefWidth="81.0" text="Direccion" />
-                    </columns>
-                  </TableView>
-                  <Separator layoutX="14.0" layoutY="37.0" prefHeight="3.0" prefWidth="572.0" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-   </children>
-</AnchorPane>
+<SplitPane dividerPositions="0.5149136577708007" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="639.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.VehiculosViewController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="598.0">
+         <children>
+            <Label layoutX="19.0" layoutY="4.0" prefHeight="21.0" prefWidth="232.0" text="Gestion Vehiculos">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt_tipo" layoutX="28.0" layoutY="58.0" text="Tipo">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmb_TipoVehiculo" layoutX="96.0" layoutY="54.0" prefHeight="31.0" prefWidth="144.0" stylesheets="@styles.css" />
+            <Label fx:id="txt_matricula" layoutX="5.0" layoutY="193.0" text="Matricula">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt_marca" layoutX="15.0" layoutY="102.0" text="Marca">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt_modelo" layoutX="8.0" layoutY="147.0" text="Modelo">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt_añofabricacion" layoutX="257.0" layoutY="64.0" text="Año de fabricacion">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txf_marca" layoutX="96.0" layoutY="104.0" prefHeight="30.0" prefWidth="144.0" />
+            <TextField fx:id="txf_modelo" layoutX="96.0" layoutY="147.0" prefHeight="31.0" prefWidth="144.0" />
+            <TextField fx:id="txf_AñoFabricacion" layoutX="436.0" layoutY="56.0" prefHeight="30.0" prefWidth="144.0" />
+            <TextField fx:id="txf_matricula" layoutX="96.0" layoutY="190.0" prefHeight="30.0" prefWidth="144.0" />
+            <Label fx:id="txt_numeropuertas" layoutX="255.0" layoutY="102.0" prefHeight="21.0" prefWidth="190.0" text="Numero de puertas">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txf_NumPuertas" layoutX="436.0" layoutY="104.0" prefHeight="30.0" prefWidth="144.0" />
+            <Label fx:id="txt_esautomatica" layoutX="277.0" layoutY="147.0" text="Es automatica">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="chb_esautomatica" layoutX="436.0" layoutY="145.0" prefHeight="31.0" prefWidth="144.0" stylesheets="@styles.css" />
+            <Label fx:id="txt_capacidadcarga" layoutX="258.0" layoutY="193.0" text="Capacidad de carga">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txf_CapacidadCarga" layoutX="436.0" layoutY="190.0" prefHeight="30.0" prefWidth="144.0" />
+            <Button fx:id="btn_agregarVehiculo" layoutX="3.0" layoutY="264.0" mnemonicParsing="false" onAction="#agregarVehiculoAction" text="Agregar vehiculo">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_eliminarVehiculo" layoutX="168.0" layoutY="264.0" mnemonicParsing="false" onAction="#eliminarVehiculoAction" text="Eliminar vehiculo">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_editarVehiculo" layoutX="350.0" layoutY="264.0" mnemonicParsing="false" onAction="#editarVehiculoAction" text="Editar vehiculo">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_limpiar" layoutX="493.0" layoutY="264.0" mnemonicParsing="false" onAction="#limpiarAction" text="Limpiar">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="598.0">
+         <children>
+            <TableView fx:id="tb_listaVehiculos" layoutX="8.0" layoutY="14.0" prefHeight="278.0" prefWidth="566.0">
+              <columns>
+                <TableColumn fx:id="cl_matricula" prefWidth="83.0" text="Matrícula" />
+                <TableColumn fx:id="cl_marca" prefWidth="67.0" text="Marca" />
+                  <TableColumn fx:id="cl_modelo" prefWidth="75.0" text="Modelo" />
+                  <TableColumn fx:id="cl_añoFabricacion" prefWidth="132.0" text="AñoFabricación" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

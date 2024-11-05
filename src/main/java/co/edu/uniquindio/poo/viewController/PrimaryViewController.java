@@ -37,7 +37,7 @@ public class PrimaryViewController {
 
     @FXML
     void abrirGestionarVehiculosAction(ActionEvent event) {
-
+        app.openCrudGestionarVehiculos();
     }
 
     @FXML

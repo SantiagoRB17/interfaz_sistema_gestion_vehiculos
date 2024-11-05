@@ -1,23 +1,23 @@
 package co.edu.uniquindio.poo.model;
 
 public abstract class Vehiculo {
-    private int NumeroMatrícula;
+    private String NumeroMatrícula;
     private String Marca; 
     private int Modelo; 
     private int AñoFabricación;
     protected static final double TARIFA_BASE = 50.0;
     private Reserva reserva;
-    public Vehiculo(int numeroMatrícula, String marca, int modelo, int añoFabricación, double tarifaBase) {
+    public Vehiculo(String numeroMatrícula, String marca, int modelo, int añoFabricación) {
         NumeroMatrícula = numeroMatrícula;
         Marca = marca;
         Modelo = modelo;
         AñoFabricación = añoFabricación;
     }
     
-    public int getNumeroMatrícula() {
+    public String getNumeroMatrícula() {
         return NumeroMatrícula;
     }
-    public void setNumeroMatrícula(int numeroMatrícula) {
+    public void setNumeroMatrícula(String numeroMatrícula) {
         NumeroMatrícula = numeroMatrícula;
     }
     public String getMarca() {

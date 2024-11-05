@@ -1,10 +1,13 @@
 @font-face {
-    font-family: 'Raleway Regular';
+    font-family: 'Raleway';
     src: url('src/main/resources/co/edu/uniquindio/poo/font/Raleway-Regular.ttf');
+    font-weight: normal;
 }
+
 @font-face {
-    font-family: 'Raleway SemiBold';
-    src: url('src/main/resources/co/edu/uniquindio/poo/font/Raleway-SemiBold.ttf');
+    font-family: 'Raleway';
+    src: url('src/main/resources/co/edu/uniquindio/poo/font/Raleway-Regular.ttf');
+    font-weight: bold;
 }
 
 .root {
@@ -142,4 +145,49 @@
     -fx-background-color: #ffffff; /* Fondo blanco al enfocar */
     -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.3), 8, 0.2, 0, 2); /* Sombra azul al enfocar */
     -fx-border-width: 1.5; /* Borde ligeramente más grueso */
+}
+.combo-box{
+    -fx-background-color: #2d3250; /* Fondo blanco */
+    -fx-border-color: #ffb17a; /* Color del borde */
+    -fx-border-radius: 5px; /* Esquinas redondeadas */
+    -fx-padding: 5px; /* Espaciado interno */
+    -fx-text-fill: #000000; /* Color del texto */
+}
+.choice-box {
+    -fx-background-color: #2d3250; /* Fondo blanco */
+    -fx-border-color: #ffb17a; /* Color del borde */
+    -fx-border-radius: 5px; /* Esquinas redondeadas */
+    -fx-padding: 5px; /* Espaciado interno */
+    -fx-text-fill: #000000; /* Color del texto */
+}
+
+/* Estilo para el ComboBox cuando está enfocado */
+.combo-box:hover, .choice-box:hover {
+    -fx-border-color: #ffb17a; /* Color del borde al pasar el mouse */
+}
+
+.choice-box .list-view {
+    -fx-background-color: #424764; /* Fondo de la lista */
+    -fx-border-color: #424764; /* Color del borde de la lista */
+    -fx-border-radius: 5px; /* Esquinas redondeadas de la lista */
+}
+
+
+/* Estilo para la lista desplegable */
+.combo-box .list-view{
+    -fx-background-color: #424764; /* Fondo de la lista */
+    -fx-border-color: #424764; /* Color del borde de la lista */
+    -fx-border-radius: 5px; /* Esquinas redondeadas de la lista */
+}
+
+/* Estilo para cada elemento de la lista */
+.combo-box .list-view .list-cell, .choice-box .list-view .list-cell {
+    -fx-padding: 10px; /* Espaciado interno de los elementos */
+    -fx-text-fill: #333333; /* Color del texto de los elementos */
+}
+
+/* Estilo para el elemento seleccionado */
+.combo-box .list-view .list-cell:selected, .choice-box .list-view .list-cell:selected {
+    -fx-background-color: #007bff; /* Fondo azul para el elemento seleccionado */
+    -fx-text-fill: #000000; /* Color del texto seleccionado */
 }

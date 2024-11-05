@@ -3,8 +3,8 @@ package co.edu.uniquindio.poo.model;
 public class Auto extends Vehiculo {
     int NumPuertas;
 
-    public Auto(int numeroMatrícula, String marca, int modelo, int añoFabricación, double tarifaBase, int numPuertas) {
-        super(numeroMatrícula, marca, modelo, añoFabricación, tarifaBase);
+    public Auto(String numeroMatrícula, String marca, int modelo, int añoFabricación, int numPuertas) {
+        super(numeroMatrícula, marca, modelo, añoFabricación);
         NumPuertas = numPuertas;
     }
 

@@ -3,10 +3,10 @@ package co.edu.uniquindio.poo.model;
 public class Cliente {
     private String Nombre;
     private String Cedula;
-    private int Telefono;
+    private long Telefono;
     private String Direccion;
     
-    public Cliente(String nombre, String cedula, int telefono, String direccion) {
+    public Cliente(String nombre, String cedula, long telefono, String direccion) {
         Nombre = nombre;
         Cedula = cedula;
         Telefono = telefono;
@@ -24,10 +24,10 @@ public class Cliente {
     public void setCedula(String cedula) {
         Cedula = cedula;
     }
-    public int getTelefono() {
+    public long getTelefono() {
         return Telefono;
     }
-    public void setTelefono(int telefono) {
+    public void setTelefono(long telefono) {
         Telefono = telefono;
     }
     public String getDireccion() {

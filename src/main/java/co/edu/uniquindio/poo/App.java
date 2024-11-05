@@ -2,18 +2,15 @@ package co.edu.uniquindio.poo;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import co.edu.uniquindio.poo.model.Auto;
-import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empresa;
-import co.edu.uniquindio.poo.model.Vehiculo;
 import co.edu.uniquindio.poo.viewController.ClientesViewController;
 import co.edu.uniquindio.poo.viewController.PrimaryViewController;
-import co.edu.uniquindio.poo.model.Reserva;
+import co.edu.uniquindio.poo.viewController.VehiculosViewController;
+
 import java.io.IOException;
 
 /**
@@ -29,6 +26,8 @@ public class App extends Application {
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Gestion de alquileres");
+        Image icon = new Image(getClass().getResourceAsStream("/co/edu/uniquindio/poo/logo4.png"));
+        primaryStage.getIcons().add(icon);
         openViewPrincipal();
     }
 
@@ -62,6 +61,22 @@ public class App extends Application {
             SplitPane rootLayout = (SplitPane) loader.load();
             ClientesViewController clienteViewController = loader.getController();
             clienteViewController.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            System.err.println("Error al cargar el archivo FXML: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    public void openCrudGestionarVehiculos() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudVehiculos.fxml"));
+            SplitPane rootLayout = (SplitPane) loader.load();
+            VehiculosViewController vehiculosViewController = loader.getController();
+            vehiculosViewController.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);

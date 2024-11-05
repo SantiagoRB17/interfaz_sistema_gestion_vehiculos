@@ -5,7 +5,6 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.ClienteController;
 import co.edu.uniquindio.poo.model.Cliente;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -48,7 +47,7 @@ public class ClientesViewController{
     private Label txt_nombre;
 
     @FXML
-    private TableColumn<Cliente, Integer> cl_telefono;
+    private TableColumn<Cliente, Long> cl_telefono;
 
     @FXML
     private Button btn_Limpiar;
@@ -141,7 +140,7 @@ public class ClientesViewController{
     private void initDataBinding() {
         cl_cedula.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCedula()));
         cl_nombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
-        cl_telefono.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getTelefono()));
+        cl_telefono.setCellValueFactory(cellData -> new SimpleObjectProperty<Long>(cellData.getValue().getTelefono()));
         cl_direccion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDireccion()));
         // Usamos SimpleObjectProperty para manejar Double y Integer correctamente
     }
@@ -168,7 +167,7 @@ public class ClientesViewController{
         }
     }
     private Cliente buildCliente() {
-        Cliente cliente = new Cliente(input_nombre.getText(), input_cedula.getText(), Integer.parseInt(input_telefono.getText()),input_direccion.getText());
+        Cliente cliente = new Cliente(input_nombre.getText(), input_cedula.getText(), Long.parseLong(input_telefono.getText()),input_direccion.getText());
         return cliente;
     }
     private void eliminarCliente() {

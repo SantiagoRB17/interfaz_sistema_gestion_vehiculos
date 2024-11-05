@@ -3,9 +3,9 @@ package co.edu.uniquindio.poo.model;
 public class Camioneta extends Vehiculo{
     double CapacidadToneladas;
 
-    public Camioneta(int numeroMatrícula, String marca, int modelo, int añoFabricación, double tarifaBase,
+    public Camioneta(String numeroMatrícula, String marca, int modelo, int añoFabricación,
             double capacidadToneladas) {
-        super(numeroMatrícula, marca, modelo, añoFabricación, tarifaBase);
+        super(numeroMatrícula, marca, modelo, añoFabricación);
         CapacidadToneladas = capacidadToneladas;
     }
 

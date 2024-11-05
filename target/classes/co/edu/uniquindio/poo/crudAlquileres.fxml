@@ -67,6 +67,7 @@
                 <TableColumn fx:id="cl_codigo" prefWidth="75.0" text="Codigo" />
                   <TableColumn fx:id="cl_VehiculoMatricula" prefWidth="83.0" text="Matricula" />
                   <TableColumn fx:id="cl_clienteCedula" prefWidth="67.0" text="Cliente" />
+                  <TableColumn fx:id="cl_costoTotal" prefWidth="75.0" text="Costo" />
               </columns>
             </TableView>
             <Button fx:id="btn_irAVehiculos" layoutX="8.0" layoutY="255.0" mnemonicParsing="false" onAction="#irAVehiculosAction" text="Ir a gestion de vehiculos" />

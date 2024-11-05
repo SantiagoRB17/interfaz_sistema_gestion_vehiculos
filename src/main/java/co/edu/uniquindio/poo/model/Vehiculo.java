@@ -5,7 +5,7 @@ public abstract class Vehiculo {
     private String Marca; 
     private int Modelo; 
     private int AñoFabricación;
-    protected static final double TARIFA_BASE = 50.0;
+    protected static final double TARIFA_BASE = 1000.0;
     private Reserva reserva;
     public Vehiculo(String numeroMatrícula, String marca, int modelo, int añoFabricación) {
         NumeroMatrícula = numeroMatrícula;
@@ -47,7 +47,7 @@ public abstract class Vehiculo {
     }
 
     
-    public abstract double calcularCosto();
+    public abstract double calcularCosto(int dias);
 
     @Override
     public String toString() {

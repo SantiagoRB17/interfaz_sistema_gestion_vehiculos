@@ -7,7 +7,6 @@ import co.edu.uniquindio.poo.controller.AlquilerController;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Reserva;
 import co.edu.uniquindio.poo.model.Vehiculo;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -63,6 +62,9 @@ public class AlquileresViewController {
 
     @FXML
     private ComboBox<Cliente> cmb_cliente;
+
+    @FXML
+    private TableColumn<Reserva, Double> cl_costoTotal;
 
     @FXML
     private Button btn_eliminarAlquiler;
@@ -127,6 +129,7 @@ public class AlquileresViewController {
         assert tb_listAlquileres != null : "fx:id=\"tb_listAlquileres\" was not injected: check your FXML file 'crudAlquileres.fxml'.";
         assert cl_VehiculoMatricula != null : "fx:id=\"cl_VehiculoMatricula\" was not injected: check your FXML file 'crudAlquileres.fxml'.";
         assert btn_limpiar != null : "fx:id=\"btn_limpiar\" was not injected: check your FXML file 'crudAlquileres.fxml'.";
+        assert cl_costoTotal != null : "fx:id=\"cl_costoTotal\" was not injected: check your FXML file 'crudAlquileres.fxml'.";
         alquilerController= new AlquilerController(app.empresa);
         cargarClientes();
         cargarVehiculos();
@@ -153,6 +156,7 @@ public class AlquileresViewController {
         cl_VehiculoMatricula.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getVehiculo().getNumeroMatrícula()));
         cl_dias.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getDiasReserva()));
         cl_codigo.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getCodigo()));
+        cl_costoTotal.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getCostoTotal()));
     }
     private void obtenerAlquileres() {
         reservas.addAll(alquilerController.obtenerListaAlquileres());
@@ -184,7 +188,7 @@ public class AlquileresViewController {
     private Reserva buildAlquiler() {
         Cliente clienteSeleccionado = cmb_cliente.getSelectionModel().getSelectedItem();
         Vehiculo vehiculoSeleccionado = cmb_vehiculo.getSelectionModel().getSelectedItem();
-       Reserva alquiler = new Reserva(Integer.parseInt(txf_diasAlquiler.getText()),Integer.parseInt(txf_codigo.getText()) , vehiculoSeleccionado, clienteSeleccionado);
+        Reserva alquiler = new Reserva(Integer.parseInt(txf_diasAlquiler.getText()),Integer.parseInt(txf_codigo.getText()) , vehiculoSeleccionado, clienteSeleccionado);
         return alquiler;
     }
     private void eliminarAlquiler() {

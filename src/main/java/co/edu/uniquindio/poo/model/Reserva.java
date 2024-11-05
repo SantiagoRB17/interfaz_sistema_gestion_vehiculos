@@ -5,13 +5,18 @@ public class Reserva {
     private int codigo;
     private Vehiculo vehiculo;
     private Cliente cliente;
+    private double costoTotal;
 
     public Reserva(int diasReserva, int codigo, Vehiculo vehiculo, Cliente cliente) {
         DiasReserva = diasReserva;
         this.vehiculo=vehiculo;
         this.cliente=cliente;
         this.codigo=codigo;
+        this.costoTotal=vehiculo.calcularCosto(diasReserva);
     }
+
+
+    
 
     public int getDiasReserva() {
         return DiasReserva;
@@ -49,6 +54,18 @@ public class Reserva {
     public String toString() {
         return "Reserva [DiasReserva=" + DiasReserva + ", codigo=" + codigo + ", vehiculo=" + vehiculo + ", cliente="
                 + cliente + "]";
+    }
+
+
+
+    public double getCostoTotal() {
+        return costoTotal;
+    }
+
+
+
+    public void setCostoTotal(double costoTotal) {
+        this.costoTotal = costoTotal;
     }
    
 }

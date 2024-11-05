@@ -19,11 +19,9 @@ public class Moto extends Vehiculo {
     
 
     @Override
-    public double calcularCosto() {
-        Reserva reserva=getReserva();
-        int dias=reserva.getDiasReserva();
+    public double calcularCosto(int dias) {
         if (EsAutomatica){
-            return TARIFA_BASE*dias+5000;
+            return TARIFA_BASE*dias+500;
         }
         else{
             return TARIFA_BASE*dias;

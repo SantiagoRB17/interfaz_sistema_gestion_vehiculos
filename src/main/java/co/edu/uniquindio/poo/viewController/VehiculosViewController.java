@@ -29,6 +29,12 @@ public class VehiculosViewController {
     ObservableList<Vehiculo> listVehiculos = FXCollections.observableArrayList();
     Vehiculo selectedVehiculo;
     @FXML
+    private Button btn_irAClientes;
+
+    @FXML
+    private Button btn_irAAlquileres;
+
+    @FXML
     private ResourceBundle resources;
 
     @FXML
@@ -127,6 +133,15 @@ public class VehiculosViewController {
     @FXML
     void limpiarAction(ActionEvent event) {
         limpiarSeleccion();
+    }
+
+    @FXML
+    void irAAlquileresAction(ActionEvent event) {
+        app.openCrudGestionarAlquileres();
+    }
+    @FXML
+    void irAClientesAction(ActionEvent event) {
+        app.openCrudGestionarClientes();
     }
 
     @FXML
@@ -281,6 +296,23 @@ public class VehiculosViewController {
             txf_marca.setText(vehiculo.getMarca());
             txf_modelo.setText(String.valueOf(vehiculo.getModelo()));
             txf_AñoFabricacion.setText(String.valueOf(vehiculo.getAñoFabricación()));
+            if (vehiculo instanceof Auto) {
+                txf_NumPuertas.setText(String.valueOf(((Auto) vehiculo).getNumPuertas()));
+                txf_NumPuertas.setVisible(true); // Muestra el campo específico
+                chb_esautomatica.setVisible(false);
+                txf_CapacidadCarga.setVisible(false);
+            } else if (vehiculo instanceof Moto) {
+                boolean esAutomatica = ((Moto) vehiculo).isEsAutomatica();
+                chb_esautomatica.setValue(esAutomatica ? "Automática" : "Manual");
+                chb_esautomatica.setVisible(true);
+                txf_NumPuertas.setVisible(false);
+                txf_NumPuertas.setVisible(false);
+            } else if (vehiculo instanceof Camioneta) {
+                txf_CapacidadCarga.setText(String.valueOf(((Camioneta) vehiculo).getCapacidadToneladas()));
+                txf_CapacidadCarga.setVisible(true);
+                txf_NumPuertas.setVisible(false);
+                chb_esautomatica.setVisible(false);
+            }
         }
     }
     private void agregarVehiculo() {
@@ -316,23 +348,47 @@ public class VehiculosViewController {
         }
     }
     private void editarVehiculo() {
-
-        if (selectedVehiculo != null &&
-                vehiculoController.actualizarVehiculo(selectedVehiculo.getNumeroMatrícula(), buildVehiculo())) {
-
+        if (selectedVehiculo != null) {
+            actualizarAtributosVehiculo(selectedVehiculo);
+    
             int index = listVehiculos.indexOf(selectedVehiculo);
             if (index >= 0) {
-                listVehiculos.set(index, buildVehiculo());
+                listVehiculos.set(index, selectedVehiculo); 
+                tb_listaVehiculos.refresh();
             }
-
-            tb_listaVehiculos.refresh();
+            
             limpiarSeleccion();
             limpiarCamposVehiculo();
-        } 
-        else {
-        System.out.println("No hay vehículos para editar o no hay selección.");
+        } else {
+            System.out.println("No hay vehículos para editar o no hay selección.");
+        }
     }
-}
+    private void actualizarAtributosVehiculo(Vehiculo vehiculo) {
+        if (!txf_marca.getText().isEmpty()) {
+            vehiculo.setMarca(txf_marca.getText());
+        }
+        if (!txf_modelo.getText().isEmpty()) {
+            vehiculo.setModelo(Integer.parseInt(txf_modelo.getText()));
+        }
+        if (!txf_AñoFabricacion.getText().isEmpty()) {
+            vehiculo.setAñoFabricación(Integer.parseInt(txf_AñoFabricacion.getText()));
+        }
+
+        if (vehiculo instanceof Auto) {
+            if (!txf_NumPuertas.getText().isEmpty()) {
+                ((Auto) vehiculo).setNumPuertas(Integer.parseInt(txf_NumPuertas.getText()));
+            }
+        } else if (vehiculo instanceof Moto) {
+            if (chb_esautomatica.getValue() != null) {
+                boolean esAutomatica = chb_esautomatica.getValue().equals("Automática");
+                ((Moto) vehiculo).setEsAutomatica(esAutomatica);
+            }
+        } else if (vehiculo instanceof Camioneta) {
+            if (!txf_CapacidadCarga.getText().isEmpty()) {
+                ((Camioneta) vehiculo).setCapacidadToneladas(Double.parseDouble(txf_CapacidadCarga.getText()));
+            }
+        }
+    }
     private void limpiarSeleccion() {
         tb_listaVehiculos.getSelectionModel().clearSelection();
         limpiarCamposVehiculo();

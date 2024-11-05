@@ -176,9 +176,19 @@ public class Empresa {
                 vehiculo.setMarca(actualizado.getMarca());
                 vehiculo.setModelo(actualizado.getModelo());
                 vehiculo.setAñoFabricación(actualizado.getAñoFabricación());
+                if (vehiculo instanceof Auto && actualizado instanceof Auto) {
+                    Auto autoActualizado = (Auto) actualizado;
+                    ((Auto) vehiculo).setNumPuertas(autoActualizado.getNumPuertas());
+                }
+                if (vehiculo instanceof Moto && actualizado instanceof Moto) {
+                    Auto autoActualizado = (Auto) actualizado;
+                    ((Auto) vehiculo).setNumPuertas(autoActualizado.getNumPuertas());
+                }
+
                 centinela = true;
                 break;
             }
+            
         }
         return centinela;
     }
@@ -202,25 +212,44 @@ public class Empresa {
      * Metodo para agregar una reserva a la lista de reservas
      * @param reserva reserva a agregar
      */
-    public void agregarReserva(Reserva reserva){
+    public boolean agregarReserva(Reserva reserva){
+        boolean centinela=false;
         if(!verificarReserva(reserva.getCodigo())){
             reservas.add(reserva);
+            centinela=true;
         }
+        return centinela;
     }
 
     /**
      * Metodo para eliminar una reserva de la lista de reservas
      * @param codigo codigo de la reserva a eliminar
      */
-    public void eliminarReserva(int codigo){
+    public boolean eliminarReserva(int codigo){
+        boolean centinela=false;
         for (Reserva reserva : reservas){
             if(reserva.getCodigo()==codigo){
                 reservas.remove(reserva);
+                centinela=true;
                 break;
             }
         }
+        return centinela;
     }
-
+    public boolean actualizarReserva(int codigo, Reserva actualizado) {
+        boolean centinela = false;
+        for (Reserva reserva : reservas) {
+            if (reserva.getCodigo()==codigo) {
+                reserva.setCodigo(actualizado.getCodigo());
+                reserva.setDiasReserva(actualizado.getDiasReserva());
+                reserva.setCliente(actualizado.getCliente()); 
+                reserva.setVehiculo(actualizado.getVehiculo());
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
 
     @Override
     public String toString() {

@@ -26,6 +26,12 @@ public class ClientesViewController{
     private ResourceBundle resources;
 
     @FXML
+    private Button btn_irAVehiculos;
+
+    @FXML
+    private Button btn_irAAlquileres;
+
+    @FXML
     private URL location;
 
     @FXML
@@ -97,6 +103,17 @@ public class ClientesViewController{
     @FXML
     void editarClienteAction(ActionEvent event) {
         actualizarCliente();
+
+    
+    }
+    @FXML
+    void irAVehiculosAction(ActionEvent event) {
+        app.openCrudGestionarVehiculos();
+    }
+
+    @FXML
+    void irAAlquileresAction(ActionEvent event) {
+        app.openCrudGestionarAlquileres();
     }
     @FXML
     void initialize() {

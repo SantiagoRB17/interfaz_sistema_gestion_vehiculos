@@ -2,7 +2,6 @@ package co.edu.uniquindio.poo.controller;
 
 import java.util.Collection;
 
-import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empresa;
 import co.edu.uniquindio.poo.model.Vehiculo;
 

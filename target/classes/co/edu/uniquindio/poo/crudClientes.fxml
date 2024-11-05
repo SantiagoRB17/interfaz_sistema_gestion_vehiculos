@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ClientesViewController">
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="496.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ClientesViewController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
@@ -28,9 +28,9 @@
             <Button fx:id="btn_Limpiar" layoutX="477.0" layoutY="143.0" mnemonicParsing="false" onAction="#limparAction" text="Limpiar" />
             <Button fx:id="btn_EditarCliente" layoutX="336.0" layoutY="143.0" mnemonicParsing="false" onAction="#editarClienteAction" text="Editar Cliente" />
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="166.0" prefWidth="580.0">
          <children>
-            <TableView fx:id="tb_clientes" layoutY="-2.0" prefHeight="188.0" prefWidth="580.0">
+            <TableView fx:id="tb_clientes" layoutX="8.0" layoutY="-2.0" prefHeight="188.0" prefWidth="565.0">
               <columns>
                 <TableColumn fx:id="cl_nombre" prefWidth="75.0" text="Nombre" />
                 <TableColumn fx:id="cl_cedula" prefWidth="75.0" text="Cedula" />
@@ -38,6 +38,8 @@
                   <TableColumn fx:id="cl_direccion" prefWidth="86.0" text="Direccion" />
               </columns>
             </TableView>
+            <Button fx:id="btn_irAVehiculos" layoutX="8.0" layoutY="199.0" mnemonicParsing="false" onAction="#irAVehiculosAction" text="Ir a gestion de vehiculos" />
+            <Button fx:id="btn_irAAlquileres" layoutX="390.0" layoutY="199.0" mnemonicParsing="false" onAction="#irAAlquileresAction" text="Ir a gestion de alquileres" />
          </children></AnchorPane>
   </items>
 </SplitPane>

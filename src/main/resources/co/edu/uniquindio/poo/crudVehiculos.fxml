@@ -5,11 +5,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.5149136577708007" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="639.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.VehiculosViewController">
+<SplitPane dividerPositions="0.5149136577708007" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="717.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.VehiculosViewController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="598.0">
          <children>
-            <Label layoutX="19.0" layoutY="4.0" prefHeight="21.0" prefWidth="232.0" text="Gestion Vehiculos">
+            <Label layoutX="19.0" layoutY="4.0" prefHeight="38.0" prefWidth="337.0" text="Gestion Vehiculos">
                <font>
                   <Font size="29.0" />
                </font>
@@ -93,6 +93,8 @@
                   <TableColumn fx:id="cl_añoFabricacion" prefWidth="132.0" text="AñoFabricación" />
               </columns>
             </TableView>
+            <Button fx:id="btn_irAAlquileres" layoutX="8.0" layoutY="294.0" mnemonicParsing="false" onAction="#irAAlquileresAction" text="Ir a gestion de alquileres" />
+            <Button fx:id="btn_irAClientes" layoutX="405.0" layoutY="294.0" mnemonicParsing="false" onAction="#irAClientesAction" text="Ir a gestion de clientes" />
          </children></AnchorPane>
   </items>
 </SplitPane>

@@ -7,6 +7,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import co.edu.uniquindio.poo.model.Empresa;
+import co.edu.uniquindio.poo.viewController.AlquileresViewController;
 import co.edu.uniquindio.poo.viewController.ClientesViewController;
 import co.edu.uniquindio.poo.viewController.PrimaryViewController;
 import co.edu.uniquindio.poo.viewController.VehiculosViewController;
@@ -77,6 +78,22 @@ public class App extends Application {
             SplitPane rootLayout = (SplitPane) loader.load();
             VehiculosViewController vehiculosViewController = loader.getController();
             vehiculosViewController.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            System.err.println("Error al cargar el archivo FXML: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    public void openCrudGestionarAlquileres() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudAlquileres.fxml"));
+            SplitPane rootLayout = (SplitPane) loader.load();
+            AlquileresViewController alquileresViewController = loader.getController();
+            alquileresViewController.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);

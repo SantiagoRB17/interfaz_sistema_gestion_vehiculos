@@ -42,7 +42,7 @@ public class PrimaryViewController {
 
     @FXML
     void abrirGestionarAlquileresAction(ActionEvent event) {
-
+        app.openCrudGestionarAlquileres();
     }
 
     @FXML

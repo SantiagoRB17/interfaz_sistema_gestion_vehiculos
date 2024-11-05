@@ -5,24 +5,37 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" text="Gestionar Vehiculos" textAlignment="CENTER">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </Label>
-      <Button layoutX="14.0" layoutY="74.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Agregar Vehiculo" />
-      <TableView fx:id="Tb_listaAlquileres" layoutX="50.0" layoutY="157.0" prefHeight="200.0" prefWidth="503.0">
-        <columns>
-          <TableColumn prefWidth="72.0" text="Nombre" />
-          <TableColumn prefWidth="64.0" text="Cedula" />
-            <TableColumn prefWidth="79.0" text="Telefono" />
-            <TableColumn prefWidth="81.0" text="Direccion" />
-        </columns>
-      </TableView>
-      <Separator layoutX="9.0" layoutY="133.0" prefHeight="3.0" prefWidth="572.0" />
-      <Button layoutX="228.0" layoutY="74.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Editar Vehiculo" />
-      <Button layoutX="436.0" layoutY="74.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Eliminar Vehiculo" />
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="610.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="561.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="290.0" text="Gestionar Vehiculos" textAlignment="CENTER">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="14.0" layoutY="244.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Agregar Vehiculo" />
+                  <Button layoutX="227.0" layoutY="244.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Editar Vehiculo" />
+                  <Button layoutX="439.0" layoutY="244.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="145.0" text="Eliminar Vehiculo" />
+                  <Label layoutX="14.0" layoutY="64.0" prefHeight="21.0" prefWidth="442.0" text="Label" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="Tb_listaAlquileres" layoutX="48.0" layoutY="50.0" prefHeight="200.0" prefWidth="503.0">
+                    <columns>
+                      <TableColumn prefWidth="72.0" text="Nombre" />
+                      <TableColumn prefWidth="64.0" text="Cedula" />
+                        <TableColumn prefWidth="79.0" text="Telefono" />
+                        <TableColumn prefWidth="81.0" text="Direccion" />
+                    </columns>
+                  </TableView>
+                  <Separator layoutX="14.0" layoutY="37.0" prefHeight="3.0" prefWidth="572.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
    </children>
 </AnchorPane>

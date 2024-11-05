@@ -87,25 +87,44 @@ public class Empresa {
      * Metodo para agregar un cliente a la lista de clientes
      * @param cliente cliente a agregar
      */
-    public void agregarCliente(Cliente cliente){
+    public boolean agregarCliente(Cliente cliente){
+        boolean centinela= false;
         if(!verificarCliente(cliente.getCedula())){
             clientes.add(cliente);
+            centinela=true;
         }
+        return centinela;
     }
 
     /**
      * Metodo para eliminar un cliente de la lista de clientes
      * @param cedula cedula del cliente a eliminar
      */
-    public void eliminarCliente(String cedula){
+    public boolean eliminarCliente(String cedula){
+        boolean centinela= false;
         for (Cliente cliente : clientes){
             if(cliente.getCedula().equals(cedula)){
                 clientes.remove(cliente);
+                centinela=true;
                 break;
             }
         }
+        return centinela;
     }
-
+    public boolean actualizarCliente(String cedula, Cliente actualizado) {
+        boolean centinela = false;
+        for (Cliente cliente : clientes) {
+            if (cliente.getCedula().equals(cedula)) {
+                cliente.setNombre(actualizado.getNombre());
+                cliente.setCedula(actualizado.getCedula());
+                cliente.setTelefono(actualizado.getTelefono());
+                cliente.setDireccion(actualizado.getDireccion());
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
     /**
      * Metodo que verifica si un vehiculo existe en la lista de vehiculos
      * @param NumeroMatrícula matricula del vehiculo
@@ -125,23 +144,43 @@ public class Empresa {
      * Metodo para agregar un vehiculo a la lista de vehiculos
      * @param vehiculo vehiculo a agregar
      */
-    public void agregarVehiculo(Vehiculo vehiculo){
+    public boolean agregarVehiculo(Vehiculo vehiculo){
+        boolean centinela=false;
         if(!verificarVehiculo(vehiculo.getNumeroMatrícula())){
             vehiculos.add(vehiculo);
+            centinela=true;
         }
+        return centinela;
     }
 
     /**
      * Metodo para eliminar un vehiculo de la lista de vehiculos
      * @param numeroMatrícula matricula del vehiculo a eliminar
      */
-    public void eliminarVehiculo(int numeroMatrícula){
+    public boolean eliminarVehiculo(int numeroMatrícula){
+        boolean centinela=false;
         for (Vehiculo vehiculo : vehiculos){
             if(vehiculo.getNumeroMatrícula()==numeroMatrícula){
                 vehiculos.remove(vehiculo);
+                centinela=true;
                 break;
             }
         }
+        return centinela;
+    }
+
+    public boolean actualizarVehiculo(int numeroMatrícula, Vehiculo actualizado) {
+        boolean centinela = false;
+        for (Vehiculo vehiculo : vehiculos) {
+            if (vehiculo.getNumeroMatrícula()==(numeroMatrícula)) {
+                vehiculo.setMarca(actualizado.getMarca());
+                vehiculo.setModelo(actualizado.getModelo());
+                vehiculo.setAñoFabricación(actualizado.getAñoFabricación());
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
     }
 
    /**

@@ -1,10 +1,10 @@
 package co.edu.uniquindio.poo.model;
 
 public class Cliente {
-    String Nombre;
-    String Cedula;
-    int Telefono;
-    String Direccion;
+    private String Nombre;
+    private String Cedula;
+    private int Telefono;
+    private String Direccion;
     
     public Cliente(String nombre, String cedula, int telefono, String direccion) {
         Nombre = nombre;

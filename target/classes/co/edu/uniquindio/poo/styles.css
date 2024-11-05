@@ -76,12 +76,12 @@
 }
 
 .table-view .scroll-bar:vertical .thumb {
-    -fx-background-color: #bcbcbc;
+    -fx-background-color: #676f8d;
     -fx-background-radius: 5em;
 }
 
 .table-view .scroll-bar:vertical .thumb:hover {
-    -fx-background-color: #9e9e9e;
+    -fx-background-color: #676f8d;
 }
 
 .table-view .scroll-bar:vertical .increment-button,
@@ -103,14 +103,13 @@
 /* Estilo del divisor del SplitPane */
 .split-pane *.split-pane-divider {
     -fx-padding: 2; /* Ajusta el grosor del divisor */
-    -fx-background-color: #cccccc; /* Color suave para el divisor */
+    -fx-background-color: #676f8d; /* Color suave para el divisor */
     -fx-effect: dropshadow( gaussian , rgba(0, 0, 0, 0.15) , 4, 0.2 , 1 , 1 ); /* Sombra para efecto 3D */
 }
 
 /* Estilo para cuando el divisor es arrastrado */
 .split-pane *.split-pane-divider:hover {
-    -fx-background-color: #b0b0b0; /* Color más oscuro al pasar el cursor */
-    -fx-cursor: hand; /* Cambia el cursor para indicar que es arrastrable */
+    -fx-background-color: #676f8d; /* Color más oscuro al pasar el cursor */ /* Cambia el cursor para indicar que es arrastrable */
 }
 
 /* Estilo para los bordes de cada panel */
@@ -121,4 +120,26 @@
     -fx-border-radius: 4; /* Bordes redondeados */
     -fx-padding: 10; /* Espaciado interno en cada panel */
     -fx-effect: dropshadow( gaussian , rgba(0, 0, 0, 0.1) , 5, 0.1 , 2 , 2 ); /* Sombra sutil */
+}
+/* Estilo moderno para TextField en JavaFX */
+.text-field {
+    -fx-background-color: #f2f2f2;  /* Fondo claro */
+    -fx-background-insets: 0;
+    -fx-padding: 8 15; /* Espaciado interno */
+    -fx-border-radius: 8; /* Bordes redondeados */
+    -fx-background-radius: 8;
+    -fx-border-color: #c2c2c2; /* Color del borde */
+    -fx-border-width: 1;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333; /* Color del texto */
+    -fx-prompt-text-fill: #a9a9a9; /* Color del texto de sugerencia */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0.1, 0, 2); /* Sombra sutil */
+    -fx-focus-color: transparent; /* Sin color de borde en foco */
+}
+
+.text-field:focused {
+    -fx-border-color: #4a90e2; /* Color de borde en foco */
+    -fx-background-color: #ffffff; /* Fondo blanco al enfocar */
+    -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.3), 8, 0.2, 0, 2); /* Sombra azul al enfocar */
+    -fx-border-width: 1.5; /* Borde ligeramente más grueso */
 }

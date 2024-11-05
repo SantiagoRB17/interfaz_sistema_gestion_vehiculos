@@ -5,22 +5,21 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.PrimaryViewController">
    <children>
       <HBox layoutY="124.0" prefHeight="38.0" prefWidth="600.0">
          <children>
-            <Button fx:id="btn_crudClientes" mnemonicParsing="false" pickOnBounds="false" prefHeight="31.0" prefWidth="220.0" text="Gestionar clientes">
+            <Button fx:id="btn_crudClientes" mnemonicParsing="false" onAction="#abrrGestionarClientesAction" pickOnBounds="false" prefHeight="31.0" prefWidth="220.0" text="Gestionar clientes">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="btn_crudVehiculos" mnemonicParsing="false" pickOnBounds="false" prefHeight="31.0" prefWidth="197.0" text="Gestionar vehiculos">
+            <Button fx:id="btn_crudVehiculos" mnemonicParsing="false" onAction="#abrirGestionarVehiculosAction" pickOnBounds="false" prefHeight="31.0" prefWidth="197.0" text="Gestionar vehiculos">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="btn_crudAlquileres" mnemonicParsing="false" pickOnBounds="false" prefHeight="31.0" prefWidth="185.0" text="Gestionar alquileres">
+            <Button fx:id="btn_crudAlquileres" mnemonicParsing="false" onAction="#abrirGestionarAlquileresAction" pickOnBounds="false" prefHeight="31.0" prefWidth="185.0" text="Gestionar alquileres">
                <font>
                   <Font size="16.0" />
                </font>

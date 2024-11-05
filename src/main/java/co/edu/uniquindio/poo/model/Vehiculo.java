@@ -1,19 +1,17 @@
 package co.edu.uniquindio.poo.model;
 
 public abstract class Vehiculo {
-    int NumeroMatrícula;
-    String Marca; 
-    int Modelo; 
-    int AñoFabricación;
-    double TarifaBase;
+    private int NumeroMatrícula;
+    private String Marca; 
+    private int Modelo; 
+    private int AñoFabricación;
+    protected static final double TARIFA_BASE = 50.0;
     private Reserva reserva;
     public Vehiculo(int numeroMatrícula, String marca, int modelo, int añoFabricación, double tarifaBase) {
         NumeroMatrícula = numeroMatrícula;
         Marca = marca;
         Modelo = modelo;
         AñoFabricación = añoFabricación;
-        TarifaBase = tarifaBase;
-        
     }
     
     public int getNumeroMatrícula() {
@@ -40,13 +38,6 @@ public abstract class Vehiculo {
     public void setAñoFabricación(int añoFabricación) {
         AñoFabricación = añoFabricación;
     }
-    public double getTarifaBase() {
-        return TarifaBase;
-    }
-    public void setTarifaBase(double tarifaBase) {
-        TarifaBase = tarifaBase;
-    }
-    
     public Reserva getReserva() {
         return reserva;
     }
@@ -56,12 +47,12 @@ public abstract class Vehiculo {
     }
 
     
-    public abstract void calcularCosto();
+    public abstract double calcularCosto();
 
     @Override
     public String toString() {
         return "Vehiculo [NumeroMatrícula=" + NumeroMatrícula + ", Marca=" + Marca + ", Modelo=" + Modelo
-                + ", AñoFabricación=" + AñoFabricación + ", TarifaBase=" + TarifaBase + "]";
+                + ", AñoFabricación=" + AñoFabricación +"]";
     }    
     
 }

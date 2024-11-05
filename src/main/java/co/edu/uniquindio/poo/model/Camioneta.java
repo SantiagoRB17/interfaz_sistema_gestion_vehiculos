@@ -18,10 +18,11 @@ public class Camioneta extends Vehiculo{
     }
     
     @Override
-    public void calcularCosto() {
+    public double calcularCosto() {
         Reserva reserva=getReserva();
         int dias=reserva.getDiasReserva();
-        System.out.println(TarifaBase*dias*CapacidadToneladas);
+        double porcentajeAdicional=0.10*CapacidadToneladas;
+        return TARIFA_BASE*dias+porcentajeAdicional;
         
     }
 

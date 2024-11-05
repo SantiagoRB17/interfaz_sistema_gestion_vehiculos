@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo.viewController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import co.edu.uniquindio.poo.App;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -30,6 +31,21 @@ public class PrimaryViewController {
     private Button btn_crudClientes;
 
     @FXML
+    void abrrGestionarClientesAction(ActionEvent event) {
+        app.openCrudGestionarClientes();
+    }
+
+    @FXML
+    void abrirGestionarVehiculosAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void abrirGestionarAlquileresAction(ActionEvent event) {
+
+    }
+
+    @FXML
     void initialize() {
         assert Txt_Bienvenida != null : "fx:id=\"Txt_Bienvenida\" was not injected: check your FXML file 'primary.fxml'.";
         assert Txt_NombreEmpresa != null : "fx:id=\"Txt_NombreEmpresa\" was not injected: check your FXML file 'primary.fxml'.";
@@ -38,7 +54,6 @@ public class PrimaryViewController {
         assert btn_crudClientes != null : "fx:id=\"btn_crudClientes\" was not injected: check your FXML file 'primary.fxml'.";
 
     }
-
     public void setApp(App app) {
         this.app = app;
     }
